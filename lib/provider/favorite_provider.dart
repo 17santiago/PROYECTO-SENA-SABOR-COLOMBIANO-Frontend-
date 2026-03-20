@@ -23,9 +23,10 @@ class FavoriteProvider extends ChangeNotifier {
           regionImage: fav['region'] != null
               ? '${ApiService.baseUrl}/uploads/${fav['region']}'
               : '',
-          galery: (fav['galery'] != null && fav['galery'] != '')
-    ? '${ApiService.baseUrl}/uploads/recipes/${fav['galery']}'
-    : ''
+          galery: fav['galery'] != null
+          ? '${ApiService.baseUrl}/uploads/recipes/${fav['galery']}'
+
+          : (fav['galery'] ?? '')
         );
       }).toList();
       notifyListeners();
