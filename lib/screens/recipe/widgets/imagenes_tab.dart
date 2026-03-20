@@ -33,6 +33,7 @@ class ImagenesTab extends StatelessWidget {
               borderRadius: BorderRadius.circular(18),
               child: AspectRatio(
                 aspectRatio: 1, 
+                child: Image.network(
                   recipe.galery,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
